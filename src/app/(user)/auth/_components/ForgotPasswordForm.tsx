@@ -59,7 +59,7 @@ export const ForgotPasswordForm = () => {
 					className='w-full max-w-md md:p-10 p-5 bg-white rounded-md shadow-md space-y-4 mx-5'
 				>
 					<Link
-						href={'/'}
+						href='https://legacyventureltd.com'
 						className='w-full h-20 bg-black flex items-center justify-center px-5 rounded-md gap-2'
 					>
 						<Image

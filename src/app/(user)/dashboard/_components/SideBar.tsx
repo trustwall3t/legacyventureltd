@@ -20,6 +20,7 @@ import {
 	SettingsIcon,
 	LogOutIcon,
 	UsersIcon,
+	IdCardIcon,
 } from 'lucide-react';
 import Image from 'next/image';
 import { logout } from '@/actions/auth/login';
@@ -69,6 +70,11 @@ const SideBar = () => {
 			label: 'Invite friends',
 			icon: <UsersIcon />,
 			href: '/dashboard/invite-friends',
+		},
+		{
+			label: 'KYC',
+			icon: <IdCardIcon />,
+			href: '/dashboard/kyc',
 		},
 		{
 			label: 'Settings',

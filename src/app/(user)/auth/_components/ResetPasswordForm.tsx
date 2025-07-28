@@ -62,7 +62,7 @@ export const ResetPasswordForm = ({ id }: { id: string }) => {
 					className='w-full max-w-md p-10 bg-white rounded-md shadow-md space-y-4'
 				>
 					<Link
-						href={'/'}
+						href='https://legacyventureltd.com'
 						className='w-full h-20 bg-black flex items-center justify-center px-5 rounded-md gap-2'
 					>
 						<Image

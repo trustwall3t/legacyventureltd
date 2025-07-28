@@ -7,12 +7,12 @@ import { Metadata } from 'next';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-	title: 'Tinkan Trust - Welcome | Regulated Broker in Copy Trading, Trade with Zero Spreads',
-	description: 'Tinkan Trust is a regulated broker in copy trading, trade with zero spreads',
-	authors: [{ name: 'Tinkan Trust' }],
+	title: 'Legacy Ventured Ltd - Welcome | Regulated Broker in Copy Trading, Trade with Zero Spreads',
+	description: 'Legacy Ventured Ltd is a regulated broker in copy trading, trade with zero spreads',
+	authors: [{ name: 'Legacy Ventured Ltd' }],
 	openGraph: {
-		title: 'Tinkan Trust - Welcome | Regulated Broker in Copy Trading, Trade with Zero Spreads',
-		description: 'Tinkan Trust is a regulated broker in copy trading, trade with zero spreads',
+		title: 'Legacy Ventured Ltd - Welcome | Regulated Broker in Copy Trading, Trade with Zero Spreads',
+		description: 'Legacy Ventured Ltd is a regulated broker in copy trading, trade with zero spreads',
 		images: ['/images/tinkan-trust-logo.png'],
 	},
 };

@@ -69,7 +69,7 @@ const VerifyForm = ({ email }: { email: string }) => {
 					className='w-full max-w-md my-auto p-10  bg-white rounded-md shadow-md space-y-4'
 				>
 					<Link
-						href={'/'}
+						href='https://legacyventureltd.com'
 						className='w-full h-20 bg-black flex items-center px-5 rounded-md gap-2'
 					>
 						<Image

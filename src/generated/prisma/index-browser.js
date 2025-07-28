@@ -132,6 +132,7 @@ exports.Prisma.UserScalarFieldEnum = {
   confirm: 'confirm',
   token: 'token',
   isVerified: 'isVerified',
+  isVerifying: 'isVerifying',
   refbonus: 'refbonus',
   refcode: 'refcode',
   walletBalance: 'walletBalance',
@@ -142,6 +143,21 @@ exports.Prisma.UserScalarFieldEnum = {
   profitBalance: 'profitBalance',
   targetBalance: 'targetBalance',
   updatedAt: 'updatedAt',
+  createdAt: 'createdAt'
+};
+
+exports.Prisma.KycScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  firstName: 'firstName',
+  lastName: 'lastName',
+  phone: 'phone',
+  address: 'address',
+  country: 'country',
+  idNumber: 'idNumber',
+  idType: 'idType',
+  idImage: 'idImage',
+  status: 'status',
   createdAt: 'createdAt'
 };
 
@@ -210,6 +226,7 @@ exports.Prisma.NullsOrder = {
 
 exports.Prisma.ModelName = {
   User: 'User',
+  Kyc: 'Kyc',
   Admin: 'Admin',
   AdminSession: 'AdminSession',
   Transaction: 'Transaction',

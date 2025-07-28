@@ -7,6 +7,7 @@ import { getSession } from '@/lib/session';
 import { redirect } from 'next/navigation';
 import { UserProvider } from '@/lib/context/UserContext';
 import { UserMenu } from './_components/UserMenu';
+import { MailWarning } from 'lucide-react';
 
 const DashboardLayout = async ({ children }: { children: ReactNode }) => {
 	const session = await getSession();
@@ -40,6 +41,30 @@ const DashboardLayout = async ({ children }: { children: ReactNode }) => {
 						<UserMenu />
 					</div>
 					<div className='md:p-10 p-4 mt-16 min-h-[calc(100vh-100px)]'>
+						{!session.user.isVerified && session.user.kyc[0]?.status === 'pending' ? (
+							<div className='bg-red-500/20 text-red-500 rounded-md p-5 md:p-6 w-full mb-4 space-y-4'>
+								<p className='text-sm font-medium'>
+									Please complete your KYC to continue trading
+								</p>
+								<Link
+									href='/dashboard/kyc'
+									className='text-sm font-medium bg-red-500 text-white rounded-md p-2 px-4'
+								>
+									Complete KYC
+								</Link>
+							</div>
+						) : (
+							session.user.kyc[0]?.status === 'pending' && (
+								<div className='bg-yellow-500/20 text-yellow-500 rounded-md p-5 md:p-6 w-full mb-4 flex items-center gap-x-10'>
+									
+									<MailWarning className='w-4 h-4' />
+									<p className='text-sm font-medium'>
+										Please wait for your KYC to be approved
+									</p>
+								</div>
+							)
+						)}
+
 						{children}
 					</div>
 					<div className='flex justify-between items-center px-10 py-10 text-white'>
@@ -52,7 +77,7 @@ const DashboardLayout = async ({ children }: { children: ReactNode }) => {
 								href='/privacy-policy'
 								className='text-sm font-medium'
 							>
-								Terms 
+								Terms
 							</Link>
 						</p>
 					</div>

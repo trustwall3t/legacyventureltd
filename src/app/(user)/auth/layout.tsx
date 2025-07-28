@@ -8,7 +8,7 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
 			<div className="hidden md:block  w-full min-h-screen  mx-auto  px-10 bg-[url('/bg-1.jpg')] bg-cover bg-center p-10">
 				<div className='flex items-center gap-2'>
 					<Link
-						href='/'
+						href='https://legacyventureltd.com'
 						className='w-full h-full flex items-center '
 					>
 						<Image

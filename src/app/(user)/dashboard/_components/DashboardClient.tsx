@@ -12,10 +12,17 @@ interface DashboardClientProps {
 }
 
 const DashboardClient = ({ user }: DashboardClientProps) => {
+	
 	return (
 		<div className='flex flex-col gap-4  w-full'>
 			<div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
 				<div className='bg-black rounded-md p-5 flex flex-col gap-6  border-gray-300'>
+					{user.isVerified && (
+						<div className='flex items-center gap-2 justify-end'>
+							<div className='h-3 w-3 bg-green-500 rounded-full'></div>
+							<p className='text-sm font-medium'>Verified</p>
+						</div>
+					)}
 					<div className='flex flex-col gap-1'>
 						<p className='text-sm font-medium'>Account Balance</p>
 						<div className='bg-blue-600/20 text-white rounded-md p-2 py-1 w-full'>

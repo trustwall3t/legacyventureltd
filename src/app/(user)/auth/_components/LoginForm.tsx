@@ -62,7 +62,7 @@ export const LoginForm = () => {
 				>
 					<div className='w-full h-20 bg-black flex items-center px-5 rounded-md gap-2'>
 						<Link
-							href='/'
+							href='https://legacyventureltd.com'
 							className='w-full h-full flex items-center justify-center'
 						>
 							<Image

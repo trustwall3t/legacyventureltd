@@ -29,7 +29,7 @@ const AdminDashboardLayout = ({ children }: { children: React.ReactNode }) => {
 						<SidebarTrigger className='text-[var(--myGreen)]' />
 						<div className='hidden sm:flex items-center gap-2 logo-container border-l-2 border-gray-300 pl-2'>
 							<Image
-								src='/logo-black.png'
+								src='/logo.png'
 								alt='logo'
 								width={100}
 								height={100}
@@ -49,7 +49,7 @@ const AdminDashboardLayout = ({ children }: { children: React.ReactNode }) => {
 										Admin
 									</p>
 									<p className='text-sm font-medium text-gray-700'>
-										support@tinkantrust.com
+										support@legacyventureltd.com
 									</p>
 								</div>
 								<ChevronDownIcon className='w-4 h-4 text-gray-700' />

@@ -53,7 +53,15 @@ export async function getSession() {
 				},
 			},
 			include: {
-				user: true,
+				user: {
+					include: {
+						kyc: {
+							select: {
+								status: true,
+							},
+						},
+					},
+				},
 			},
 		});
 

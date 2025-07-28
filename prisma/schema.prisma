@@ -22,6 +22,7 @@ model User {
   confirm           String?
   token             String?
   isVerified        Boolean       @default(false)
+  isVerifying    Boolean       @default(false)
   refbonus          Int?          @default(0)
   refcode           String?
   walletBalance     Int?          @default(0)
@@ -35,6 +36,22 @@ model User {
   createdAt         DateTime      @default(now())
   sessions          Session[]
   transactions      Transaction[]
+  kyc               Kyc[]
+}
+model Kyc {
+  id        String   @id @default(uuid())
+  userId    String
+  firstName String
+  lastName  String
+  phone     String
+  address   String
+  country   String
+  idNumber  String
+  idType    String
+  idImage   String
+  status    String
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Admin {

@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	images: {
-		domains: ['trustochain.com'],
+		domains: ['trustochain.com', 'res.cloudinary.com'],
 	},
 };
 

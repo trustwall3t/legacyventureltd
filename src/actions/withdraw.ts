@@ -21,6 +21,9 @@ export const requestWithdrawal = async (data : z.infer<typeof withdrawSchema>) =
     if(user.walletBalance! < Number(amount)) {
         return {error: 'Insufficient balance'}
     }
+    if(user.isVerified === false) {
+        return {error: 'KYC not verified'}
+    }
     const withdrawal = await db.transaction.create({
         data: {
             userId: user.id,

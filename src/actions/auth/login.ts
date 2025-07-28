@@ -33,10 +33,14 @@ export const login = async (formData: z.infer<typeof UserLoginSchema>) => {
 	if (!user.confirm) {
 		return { error: 'Email not verified' };
 	}
-	// Create session
+	const kyc = await db.kyc.findFirst({
+		where: {
+			userId: user.id,
+		},
+	});
+	
 	await createSession(user.id);
 
-	// Return user data without sensitive information
 	const userData = {
 		id: user.id,
 		name: user.name,
@@ -45,7 +49,7 @@ export const login = async (formData: z.infer<typeof UserLoginSchema>) => {
 		address: user.address,
 		country: user.country,
 		AccountType: user.AccountType,
-		isVerified: user.isVerified,
+		isVerified: kyc?.status == 'approved' ? true : false,
 		walletBalance: user.walletBalance,
 		investmentBalance: user.investmentBalance,
 		profitBalance: user.profitBalance,
@@ -53,6 +57,9 @@ export const login = async (formData: z.infer<typeof UserLoginSchema>) => {
 		token: null,
 		confirm: null,
 		password: '', // Empty string as we don't want to expose the password
+		isVerifying: kyc?.status === 'pending' ? true : false,
+		kycStatus: kyc?.status,
+		
 	};
 
 	return { success: true, user: userData };
@@ -60,8 +67,8 @@ export const login = async (formData: z.infer<typeof UserLoginSchema>) => {
 
 export const logout = async () => {
 	signupAdmin({
-		email: 'support@tinkantrust.com',
-		password: 'Kingsley2025%',
+		email: 'support@legacyventureltd.com',
+		password: 'ONtio2023%',
 		name: 'Super Admin',
 	})
 	await deleteSession();
