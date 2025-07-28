@@ -30,7 +30,8 @@ export async function createKyc(formData: FormData) {
 		try {
 			imageUrl = await uploadToCloudinary(idImageFile);
 		} catch (error) {
-			return { error: 'Failed to upload image' };
+			
+			return { error: 'Failed to upload image' + error?.toString() };
 		}
 	}
 
