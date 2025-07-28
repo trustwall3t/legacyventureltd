@@ -25,7 +25,7 @@ const DashboardLayout = async ({ children }: { children: ReactNode }) => {
 							<SidebarTrigger className='text-white' />
 							<div className='hidden sm:flex items-center gap-2 logo-container border-l-2 border-gray-300 pl-2'>
 								<Link
-									href='/'
+									href='/dashboard'
 									className='w-full h-full flex items-center justify-center'
 								>
 									<Image

@@ -4,7 +4,6 @@ import { KycSchema } from '@/../../schema/KycShema';
 import { db } from '@/lib/db';
 import { getSession } from '@/lib/session';
 import { uploadToCloudinary } from '@/lib/cloudinary';
-import { z } from 'zod';
 import { revalidatePath } from 'next/cache';
 
 export async function createKyc(formData: FormData) {
