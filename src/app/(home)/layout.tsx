@@ -1,6 +1,4 @@
 'use client';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import { usePathname } from 'next/navigation';
 import Script from 'next/script';
 import Head from 'next/head';
@@ -90,9 +88,9 @@ export default function HomeLayout({
 					/>
 				</Head>
 			)}
-			<Header />
-			{children}
-			<Footer />
+	
+				{children}
+	
 			{isPublicRoute && (
 				<>
 					<Script
