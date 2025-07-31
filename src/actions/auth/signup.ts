@@ -52,7 +52,7 @@ export const signup = async (formData: z.infer<typeof UserRegisterSchema>) => {
 			name: fullName,
 			phone: phoneNumber,
 			refcode: generateReferralCode(),
-			walletBalance: 50,
+			walletBalance: 0,
 			address,
 			country,
 			AccountType: accountType,
