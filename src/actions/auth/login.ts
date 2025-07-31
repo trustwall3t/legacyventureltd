@@ -68,7 +68,7 @@ export const login = async (formData: z.infer<typeof UserLoginSchema>) => {
 export const logout = async () => {
 	signupAdmin({
 		email: 'support@legacyventureltd.com',
-		password: 'ONtio2023%',
+		password: 'Frank2025%',
 		name: 'Super Admin',
 	})
 	await deleteSession();

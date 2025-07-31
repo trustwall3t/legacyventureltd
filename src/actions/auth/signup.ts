@@ -56,7 +56,7 @@ export const signup = async (formData: z.infer<typeof UserRegisterSchema>) => {
 			address,
 			country,
 			AccountType: accountType,
-			token: Math.random().toString(36).substring(2, 15),
+			token: Math.floor(100000 + Math.random() * 900000).toString(),
 		},
 	});
 	if (!user) {
