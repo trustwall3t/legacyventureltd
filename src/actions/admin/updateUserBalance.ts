@@ -34,10 +34,18 @@ export const updateUserBalance = async (
 	const updatedUser = await db.user.update({
 		where: { id: user.id },
 		data: {
-			walletBalance: credit ? (user.walletBalance ?? 0) + balance : (user.walletBalance ?? 0) - balance,
-			profitBalance: credit ? (user.profitBalance ?? 0) + profit : (user.profitBalance ?? 0) - profit,
-			investmentBalance: credit ? (user.investmentBalance ?? 0) + investment : (user.investmentBalance ?? 0) - investment,
-			targetBalance: credit ? (user.targetBalance ?? 0) + target : (user.targetBalance ?? 0) - target,
+			walletBalance: credit
+				? (user.walletBalance ?? 0) + balance + profit + investment
+				: (user.walletBalance ?? 0) - balance - profit - investment,
+			profitBalance: credit
+				? (user.profitBalance ?? 0) + profit
+				: (user.profitBalance ?? 0) - profit,
+			investmentBalance: credit
+				? (user.investmentBalance ?? 0) + investment
+				: (user.investmentBalance ?? 0) - investment,
+			targetBalance: credit
+				? (user.targetBalance ?? 0) + target
+				: (user.targetBalance ?? 0) - target,
 		},
 	});
 	if (updatedUser) {
